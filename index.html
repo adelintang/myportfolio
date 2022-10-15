@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>MyPortfolio</title>
+</head>
+<body>
+  <div class="container">
+    <!-- header -->
+    <header>
+      <h1>Ade Lintang</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
+        <div class="menu-toggle">
+          <input type="checkbox">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+      <!-- <button type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">🌛</button> -->
+    </header>
+
+    <!-- home -->
+    <section class="Home" id="home">
+      <!-- <h1>Home</h1> -->
+      <img src="asset/img/adelintang-2.png" alt="adelintang-2.png">
+      <p>Hello, i'am Ade Lintang a Junior Web Developer</p>
+    </section>
+
+    <!-- about -->
+    <section class="About" id="about">
+      <h1>About</h1>
+      <p class="left">Hello everyone! Nama saya Ade Lintang Permono, saya berasal dari Jepara. Saat ini saya menempuh kuliah Jurusan Teknik Informatika, dan sekarang semester 5. Diluar kegiatan kuliah, saya belajar otodidak tentang web development dan programming language, seperti Javascript dan C++.</p>
+      <p class="right">Dan Dalam kuliah banyak yang saya pelajari mulai dari Dasar Pemrograman, Struktur Data, Analasis Algoritma, OOP, Database, Data Mining, Matematika Diskrit, Kalkulus, Analisis Numerik, jaringan dan hardware komputer. Dan di organisasi saya hanya mengikuti Himatif.</p>
+    </section>
+
+    <!-- contact -->
+    <section class="Contact" id="contact">
+      <h1>Contact</h1>
+      <div class="box-message">
+        <div class="message">
+          <label for="nama">Nama Lengkap</label><br>
+          <input type="text" name="nama" id="nama" autocomplete="off" placeholder="Your Name...">
+        </div>
+        <div class="message">
+          <label for="email">Email</label><br>
+          <input type="text" name="email" id="email" autocomplete="off" placeholder="YourEmail@gmail.com">
+        </div>
+        <div class="message">
+          <label for="">Pesan</label><br>
+          <textarea name="pesan" id="pesan" cols="30" rows="7" autocomplete="off" placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit..."></textarea>
+        </div>
+        <button type="submit" name="submit">kirim</button>
+      </div>
+    </section>
+
+    <!-- portfolio -->
+    <section class="Portfolio" id="portfolio">
+      <h1>Portfolio</h1>
+      <div class="item">
+        <div class="skills">
+          <h2 class="judul">Skills</h2>
+          <ul>
+            <li>~ HTML</li>
+            <li>~ CSS</li>
+            <li>~ PHP</li>
+            <li>~ C++</li>
+          </ul>
+        </div>
+        <div class="projects">
+          <h2 class="judul">Project</h2>
+          <div class="project">
+            <img src="asset/img/web.jpg" alt="web-devepment">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          <div class="project">
+            <img src="asset/img/web.jpg" alt="web-devepment">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          <div class="project">
+            <img src="asset/img/web.jpg" alt="web-devepment">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          <div class="project">
+            <img src="asset/img/web.jpg" alt="web-devepment">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          <div class="project">
+            <img src="asset/img/web.jpg" alt="web-devepment">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <p>@copyright 2022. by adelintang</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle input');
+    const nav = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', function() {
+    nav.classList.toggle('slide');
+    });
+
+    // function toggleDarkLight() {
+    //   var body = document.getElementById("body");
+    //   var currentClass = body.className;
+    //   body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+    // }
+  </script>
+</body>
+</html>

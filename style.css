@@ -1,0 +1,370 @@
+:root {
+  scroll-behavior: smooth;
+  --primary-color: #0f3047;
+  --second-color: #4a88f7;
+  --font-color: #fff;
+  --footer-color: #9e8279;
+}
+
+/* fonts */
+@font-face {
+  font-family: 'Oswald';
+  src: url('asset/fonts/Oswald-Regular.woff') format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: var(--font-color);
+  background-color: var(--primary-color);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+/* Header */
+header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  padding: 0.4em;
+  box-shadow: 0 1px 3px rgba(255, 255, 255, .7);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(--primary-color);
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+/* navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  padding: 5px;
+  color: var(--second-color);
+}
+
+nav a:hover {
+  box-sizing: border-box;
+  border-bottom: 2px solid var(--second-color);
+}
+
+/* Hamburger menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -3px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: var(--font-color);
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* Hamburger menu animation */
+.menu-toggle span:nth-child(2){
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+  background-color: var(--font-color);
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+  background-color: var(--font-color);
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+  transform: scale(0);
+  opacity: 0;
+}
+
+/* Section */
+section {
+  width: 100%;
+  height: 100vh;
+  font-size: 1.2rem;
+  padding-top: 4.5rem;
+  box-sizing: border-box;
+}
+
+/* Section Home */
+.Home {
+  padding: 1.5rem; 
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Home img {
+  margin-bottom: 20px;
+}
+.Home p {
+  font-size: 1.5rem;
+}
+
+/* Section About */
+.About {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-areas: 'judul judul'
+                        'left right';
+  gap: 30px;
+}
+
+.About h1 {
+  grid-area: judul;
+}
+
+.About p {
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+.About .left {
+  grid-area: left;
+}
+
+.About .right {
+  grid-area: right;
+}
+
+/* Section Contact */
+.Contact {
+  display: grid;
+}
+
+.Contact .box-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 60vh;
+}
+
+.Contact .message {
+  width: 40%;
+  margin: auto;
+}
+
+.Contact .message label {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+
+.message input, .message textarea {
+  width: 100%;
+  border: none;
+  border: 2px solid var(--second-color);
+  box-sizing: border-box;
+  border-radius: 3px;
+  outline: 0;
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+}
+
+.message input::-webkit-input-placeholder, .message textarea::-webkit-input-placeholder {
+  color: var(--font-color);
+}
+
+.message input {
+  height: calc(3vmax + 1em);
+}
+
+.Contact button {
+  margin: auto;
+  padding: 0.5em 1.8em;
+  cursor: pointer; 
+  border: none;
+  background-color: var(--second-color);
+  color: var(--font-color);
+  border-radius: 3px;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* Section Portfolio */
+.Portfolio {
+  margin-bottom: 50px;
+  height: auto;
+}
+
+.Portfolio h1 {
+  margin-bottom: 60px;
+}
+
+.item .judul {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.skills ul {
+  width: 50%;
+  margin: auto;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  color: var(--second-color);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 0 50px;
+}
+
+.projects .judul {
+  grid-column: 1 / -1;
+}
+
+.project {
+  padding: 5px;
+  box-shadow: 0 0 3px rgba(255, 255, 255, .9);
+  border-radius: 3px;
+}
+
+.project img {
+  width: 100%;
+  height: 60%;
+}
+
+/* Section Footer */
+footer {
+  padding: 0.8em;
+  background-color: var(--footer-color);
+}
+
+footer p {
+  color: var(--font-color);
+}
+
+
+/* Responsive Breakpoint */
+
+/* ukuran tablet diatas 768px */
+@media screen and (max-width: 850px){
+  .Contact .box-message {
+    height: 40vh;
+  }
+
+  .Contact .message {
+    width: 70%;
+  }  
+
+  .Contact button {
+    padding: 0.7em 2em;
+    margin-top: 20px;
+  }
+}
+
+
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  nav ul {
+    font-size: 1.1rem;
+  }
+}
+
+/* ukuran mobile */
+@media screen and (max-width: 576px){
+  header {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+
+  nav ul {
+    /* display: none; */
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+    box-shadow: -1px 0 3px rgba(255, 255, 255, .7);
+  }
+
+  nav ul.slide {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .About {
+    grid-template-areas: 'judul'
+                        'left' 
+                        'right';
+  }
+
+  .Contact .message {
+    width: 80%;
+  }  
+
+  .Contact button {
+    padding: 0.5em 1.8em;
+    margin-top: 20px;
+  }
+}
+
